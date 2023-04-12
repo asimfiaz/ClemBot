@@ -12,6 +12,8 @@ import { commands } from './commands.js';
 import { rockPaperScissors } from './games/rockpaperscissor.js';
 import { playHangman } from './games/hangman.js';
 
+import { Hangman } from 'discord-gamecord';
+
 client.on('ready', () => {
     console.log("Logged in as " + client.user.tag);
 });
@@ -28,8 +30,6 @@ const rest = new REST({ version: '10' }).setToken(TOKEN);
     }
 })();
 
-var input = null;
-
 // All slash commands can be configured to trigger here.
 client.on('interactionCreate', async interaction => {
     if (!interaction.isChatInputCommand()) return;
@@ -43,7 +43,19 @@ client.on('interactionCreate', async interaction => {
     }
 
     if (interaction.commandName === 'hangman') {
-        await interaction.reply(playHangman());
+        const Game = new Hangman({
+            message: interaction,
+            embed: {
+                title: 'Hangman game',
+                overTitle: 'Game Over',
+                color: '#5865F2'
+            }
+        });
+
+        Game.startGame();
+        Game.on('gameOver', async result => {
+            console.log(result);
+        });
     }
 
 });
