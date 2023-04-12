@@ -1,0 +1,15 @@
+{
+    "name": "clembot",
+    "version": "1.0.0",
+    "description": "Clemontic gear on!",
+    "main": "bot.js",
+    "type": "module",
+    "scripts": {
+        "dev": "nodemon bot.js"
+    },
+    "author": "AwesomeAsim",
+    "dependencies": {
+        "discord.js": "^14.9.0",
+        "nodemon": "^2.0.22"
+    }
+}
