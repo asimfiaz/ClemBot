@@ -5,7 +5,7 @@ export function playHangman(input = null) {
 
 
 
-    return `____`;
+    return `- - - -`;
 }
 
 function getWord() {
