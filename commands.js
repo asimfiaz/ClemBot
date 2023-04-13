@@ -1,8 +1,4 @@
 export const commands = [
-    {
-        name: 'test',
-        description: 'Replies with test is working'
-    },
     // Play Rock, Paper, Scissor
     {
         name: 'rockpaperscissors',
@@ -35,5 +31,23 @@ export const commands = [
         name: 'hangman',
         description: 'Play hangman',
         type: 1,
-    }
+    },
+    {
+        name: 'whosthatpokemon',
+        description: 'Play Who\'s that Pokemon',
+        type: 1,
+    },
+    {
+        name: 'tictactoe',
+        description: 'Play Tic Tac Toe',
+        type: 1,
+        options: [
+            {
+                name: 'opponent',
+                type: 1,
+                required: false,
+                description: 'Your opponent',
+            }
+        ]
+    },
 ];
